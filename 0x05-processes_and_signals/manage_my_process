@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This scripts writes, every 2sec, indefinitely to /tmp/my_process
+i=0
+while [ "$i" -eq 0 ]
+do
+	echo "I am alive!" | sudo tee -a /tmp/my_process > /dev/null
+	sleep 2
+done
