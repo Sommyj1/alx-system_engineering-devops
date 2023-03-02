@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script creates a TCP/UDP connection within localhost
+nc -l 98
