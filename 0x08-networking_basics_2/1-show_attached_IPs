@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script that displays all active IPv4 IPs on the machine it’s executed on
+# NB:	 the IPs displayed may be different depending on which machine you are running the script on
