@@ -1,8 +1,8 @@
 # Secured and Monitored Web Infrastructure
 
-![Image of a secured and monitored infrastructure](https://raw.githubusercontent.com/E-buez/alx-system_engineering-devops/master/0x09-web_infrastructure_design/2-secured_and_monitored_web_infrastructure.jpg)
+![Image of a secured and monitored infrastructure](https://raw.githubusercontent.com/Sommyj1/alx-system_engineering-devops/main/0x09-web_infrastructure_design/2-secured_and_monitored_web_infrastructure.jpg)
 
-[Visit Board](https://miro.com/app/board/uXjVMZGBNz4=/?share_link_id=249443131853)
+[Visit Board](https://miro.com/app/board/uXjVMZEh0Hs=/)
 
 ## Description
 
