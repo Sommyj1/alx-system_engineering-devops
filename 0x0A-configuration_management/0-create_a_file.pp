@@ -1,5 +1,7 @@
 #Using Puppet, create a file in /tmp.
 
+#file path is /tmp/school
+
 file { '/tmp/school':
 ensure => 'file',
 mode => '0744',
