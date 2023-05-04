@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Get apache to run an asiged on the container
+
+echo "ServerName Localhost" >> /etc/apache2.conf
+service apache2 start
