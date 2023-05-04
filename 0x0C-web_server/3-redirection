@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Configure your Nginx server so that /redirect_me is redirecting to another page.
+
+# Update the package list and install Nginx
+apt-get -y update
+apt-get -y install nginx
+
+echo 'Hello World!' > /usr/share/nginx/html/index.html
+
+# Create a new Nginx configuration file for the redirection
+cat <<EOF > /etc/nginx/sites-available/redirect_me
+server {
+    listen 80;
+    server_name yourdomain.com;
+    location /redirect_me {
+
+        return 301 https://www.yourdomain.com/new-page;
+    }
+}
+EOF
+
+# Link the configuration file to the sites-enabled directory
+ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+
+# Test the configuration and reload Nginx
+nginx -t
+service nginx restart
