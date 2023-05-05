@@ -7,7 +7,7 @@ if [ ! -x "$(command -v haproxy)" ]; then
 fi
 
 echo "
-frontend 101877-lb-01
+frontend 168714-lb-01
         bind *:80
         mode http
         default_backend server
