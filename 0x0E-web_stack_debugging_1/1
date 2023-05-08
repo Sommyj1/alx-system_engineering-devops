@@ -1,2 +1,2 @@
- * Restarting nginx nginx
-   ...done.
+./0-nginx_likes_port_80: line 5: syntax error near unexpected token `in'
+./0-nginx_likes_port_80: line 5: `in -s /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default'
