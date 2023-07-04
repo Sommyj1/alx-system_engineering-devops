@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
     # domain name pointed to the server
-    server_name 18.234.269.156;
+    server_name 100.25.102.18;
     access_log /var/log/nginx/reverse-access.log;
     error_log /var/log/nginx/reverse-error.log;
     location /airbnb-onepage {
