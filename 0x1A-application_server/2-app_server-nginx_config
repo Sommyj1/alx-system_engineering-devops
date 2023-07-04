@@ -39,29 +39,40 @@ server {
 	# include snippets/snakeoil.conf;
 
 	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+    	# Use IP of server as domain name
+    	server_name _;
+
+
 	location /hbnb_static {
 		alias /data/web_static/current/;
 	}
 
 	location /airbnb-onepage {
-		include proxy_params;
-		proxy_pass http://localhost:5000;
+		proxy_pass http://0.0.0.0:5000/airbnb-onepage;
 	}
 
-	# Add index.php to the list if you are using PHP
-	index index.html index.htm index.nginx-debian.html;
+	location /redirect_me {
+		return 301 https://www.github.com/Sommyj1;
+	}
+	add_header X-Served-By $hostname;
 
-	server_name _;
-	error_page 404 /error404.html;
-	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+
+	error_page 404 /404.html;
+	location = /404.html {
+		internal;
+		root /var/www/html;
+	}
 
 	location / {
-	 	add_header X-Served-By $hostname;
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
 	}
-	
+
 	# pass PHP scripts to FastCGI server
 	#
 	#location ~ \.php$ {
@@ -79,10 +90,6 @@ server {
 	#location ~ /\.ht {
 	#	deny all;
 	#}
-	#location /redirect_me {
-	#	return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4 ;
-	#}
-	#rewrite ^/redirect_me https://www.youtube.com/watch?v=7VAI73roXaY&t=2005s&ab_channel=LaithAcademy permanent;
 }
 
 
@@ -102,4 +109,6 @@ server {
 #
 #	location / {
 #		try_files $uri $uri/ =404;
+#	}
+#}
 
