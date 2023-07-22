@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if the password argument is provided
+if [ -z "$1" ]; then
+  echo "Error: Password argument is missing."
+  echo "Usage: $0 <mysql_root_password>"
+  exit 1
+fi
+
+# Get the current date in the specified format
+current_date=$(date +%d-%m-%Y)
+
+# Set the backup file name
+backup_file="backup.sql"
+
+# MySQL root password
+mysql_root_password="$1"
+
+# Dump all databases to the backup file
+mysqldump -u root -p"$mysql_root_password" --all-databases > "$backup_file"
+
+# Compress the backup file to a tar.gz archive
+tar -czvf "$current_date.tar.gz" "$backup_file"
+
+# Remove the original backup file
+rm "$backup_file"
+
+echo "MySQL dump created and compressed to $current_date.tar.gz successfully."
